@@ -4,18 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dao.OrderDAO;
+import dao.ProductDAO;
 import model.dto.OrderDTO;
 import model.entity.Order;
 
 public class OrderService {
 	private OrderDAO orderDAO = new OrderDAO();
+	private ProductDAO productDAO = new ProductDAO();
 
 	// 根據訂單項目(item)新增一筆訂單並回傳訂單顯示資訊(orderDTO)
 	public OrderDTO addOrder(String item) {
 		// 1:根據訂單項目(item)新增一筆訂單
 		Order order = new Order();
 		order.setItem(item);
-		order.setPrice(100); // 價格一律100元
+		// order.setPrice(100);//價格一律100元
+		order.setPrice(productDAO.getProduct(item).getPrice()); // 價格一律100元
 		// 傳給orderDAO儲存訂單
 		orderDAO.save(order);
 		// ---------------
