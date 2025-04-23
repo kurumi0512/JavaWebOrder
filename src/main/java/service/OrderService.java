@@ -39,4 +39,17 @@ public class OrderService {
 		}
 		return orderDTOs;
 	}
+
+	public OrderDTO removeOrder(String index) {
+		return removeOrder(Integer.parseInt(index));
+	}
+
+	// 刪除一筆訂單根據 index
+	public OrderDTO removeOrder(int index) {
+		orderDAO.remove(index);
+		OrderDTO orderDTO = new OrderDTO();
+		orderDTO.setMessage("index=" + index + ". 資料刪除成功");
+		return orderDTO;
+	}
+
 }
