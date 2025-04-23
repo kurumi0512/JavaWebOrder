@@ -40,6 +40,7 @@ public class OrderService {
 		return orderDTOs;
 	}
 
+	// 刪除一筆訂單根據 index
 	public OrderDTO removeOrder(String index) {
 		return removeOrder(Integer.parseInt(index));
 	}
@@ -49,6 +50,17 @@ public class OrderService {
 		orderDAO.remove(index);
 		OrderDTO orderDTO = new OrderDTO();
 		orderDTO.setMessage("index=" + index + ". 資料刪除成功");
+		return orderDTO;
+	}
+
+	// 修改單筆
+	public OrderDTO updateOrder(int index, String newItem) {
+		Order order = orderDAO.getOrder(index);
+		order.setItem(newItem);
+		orderDAO.update(index, order);
+		// 回報結果
+		OrderDTO orderDTO = new OrderDTO();
+		orderDTO.setMessage("index=" + index + ". 資料修改成功");
 		return orderDTO;
 	}
 

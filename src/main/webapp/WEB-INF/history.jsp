@@ -19,7 +19,7 @@
 				<table class="pure-table pure-table-bordered">
 					<thead>
 						<tr>
-							<th>Index</th><th>Item</th><th>Delete</th>
+							<th>Index</th><th>Item</th><th>Delete</th><th>修改</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -28,6 +28,7 @@
 								<td>${ row.index }</td>
 								<td>${ dto.message }</td>
 								<td><a href="/JavaWebOrder/order/delete?index=${ row.index }" class="button-error pure-button">X</a></td>
+								<td><a href="/JavaWebOrder/order/update?index=${ row.index }" class="button-success pure-button">✏️</a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -35,7 +36,7 @@
 						<tr style="background-color: #DDDDDD">
 							<td> </td>
 							<td style="text-align: right;">總金額: ${ totalPrice } 元</td>
-							<td> </td>
+							<td colspan="2"> </td>
 						</tr>
 					</tfoot>
 				</table>
