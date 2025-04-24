@@ -12,17 +12,17 @@ public class OrderService {
 	private OrderDAO orderDAO = new OrderDAO();
 	private ProductDAO productDAO = new ProductDAO();
 
-	// 根據訂單項目(item)新增一筆訂單並回傳訂單顯示資訊(orderDTO)
+	// 根據訂單項目(item)新增一筆訂單並回傳訂單顯示資訊(orderDTO),因為是傳給前端
 	public OrderDTO addOrder(String item) {
 		// 1:根據訂單項目(item)新增一筆訂單
 		Order order = new Order();
 		order.setItem(item);
 		// order.setPrice(100);//價格一律100元
 		order.setPrice(productDAO.getProduct(item).getPrice()); // 價格一律100元
-		// 傳給orderDAO儲存訂單
+		// 傳給orderDAO儲存訂單-要存到資料庫所以是DAO
 		orderDAO.save(order);
 		// ---------------
-		// 2:回傳訂單顯示資訊(OrderDTO)
+		// 2:回傳訂單顯示資訊(OrderDTO -要傳給前端 所以用DTO
 		OrderDTO orderDTO = new OrderDTO();
 		orderDTO.setMessage("您點了" + order.getItem() + "價格:" + order.getPrice() + "元");
 
