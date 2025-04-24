@@ -18,8 +18,8 @@
 			<fieldset>
 				<legend>訂單</legend>
 				品名:
-				<select name="item">
-					<option value="牛肉麵">牛肉麵</option>
+				<select name="item"> <!-- 下拉選單 -->
+					<option value="牛肉麵">牛肉麵</option> <!-- 下拉選單的選項 -->
 					<option value="陽春麵">陽春麵</option>
 					<option value="番茄麵">番茄麵</option>
 					<option value="麵疙瘩">麵疙瘩</option>
