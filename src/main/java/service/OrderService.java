@@ -9,6 +9,7 @@ import model.dto.OrderDTO;
 import model.entity.Order;
 
 public class OrderService {
+	// newDAO才能從資料庫拿取東西
 	private OrderDAO orderDAO = new OrderDAO();
 	private ProductDAO productDAO = new ProductDAO();
 

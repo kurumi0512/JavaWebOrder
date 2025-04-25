@@ -15,7 +15,7 @@ import service.ProductService;
 
 @WebServlet("/order")
 public class OrderServlet extends HttpServlet {
-
+	// 要由service傳給servlet(工法
 	private OrderService orderService = new OrderService();
 	private ProductService productService = new ProductService();
 
@@ -37,7 +37,7 @@ public class OrderServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
-		// 取得使用者在表單中所訂購的商品
+		// 取得使用者在表單中所訂購的商品,item是在jsp中所以用post方法得到參數
 		String item = req.getParameter("item");
 		// 新增訂單並會得到反饋
 		OrderDTO orderDTO = orderService.addOrder(item);
