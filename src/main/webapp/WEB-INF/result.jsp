@@ -15,7 +15,7 @@
 		<div class="pure-form">
 			<fieldset>
 				<legend>訂單結果</legend>
-				${ orderDTO.message }
+				${ orderDTO.message } <!-- 不是呼叫方法，而是取屬性值,所以不是用setmessage -->
 				<p />
 				<a href="/JavaWebOrder/index.jsp" class="pure-button pure-button-primary">回首頁</a>
 			</fieldset>
