@@ -44,7 +44,7 @@ public class OrderService {
 		return orderDTOs;
 	}
 
-	// 刪除一筆訂單根據 index
+	// 刪除一筆訂單根據 index,負責把字串轉成 int，然後就呼叫底下這個核心邏輯的方法
 	public OrderDTO removeOrder(String index) {
 		return removeOrder(Integer.parseInt(index));
 	}
