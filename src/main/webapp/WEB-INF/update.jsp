@@ -18,6 +18,7 @@
 			<fieldset>
 				<legend>修改訂單</legend>
 				Index:
+				<!-- 輸入框只能輸入數字 -->
 				<input type="number" name="index" value="${ index }" readonly /><p />
 				品名: 
 				<select name="item">
