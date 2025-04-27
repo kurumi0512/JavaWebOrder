@@ -24,7 +24,7 @@ public class OrderServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 得到歷史紀錄
 		List<OrderDTO> orderDTOs = orderService.getOrderHistory();
-		// 計算總金額
+		// 計算總金額,把每一個 OrderDTO 轉成一個 int
 		int totalPrice = orderDTOs.stream().mapToInt(dto -> productService.getPrice(dto.getMessage())).sum();
 		// 重導到指定 jsp 並帶上歷史紀錄資料
 		RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/history.jsp");

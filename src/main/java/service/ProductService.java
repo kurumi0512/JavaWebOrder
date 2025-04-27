@@ -10,6 +10,7 @@ import model.entity.Product;
 public class ProductService {
 	private ProductDAO productDAO = new ProductDAO();
 
+	// 查詢全部
 	public List<ProductDTO> findAll() {
 		List<Product> products = productDAO.findAll();
 		// List<Product> 轉 List<ProductDTO>
@@ -20,6 +21,7 @@ public class ProductService {
 		return productDTOs;
 	}
 
+	// 查詢單筆
 	public ProductDTO getProductDTO(String item) {
 		Product product = productDAO.getProduct(item);
 		return new ProductDTO(product.getItem(), product.getPrice());
