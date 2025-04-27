@@ -19,7 +19,7 @@ public class OrderService {
 		Order order = new Order();
 		order.setItem(item);
 		// order.setPrice(100);//價格一律100元
-		order.setPrice(productDAO.getProduct(item).getPrice()); // 價格一律100元
+		order.setPrice(productDAO.getProduct(item).getPrice()); // 價格要從Product取價格
 		// 傳給orderDAO儲存訂單-要存到資料庫所以是DAO
 		orderDAO.save(order);
 		// ---------------

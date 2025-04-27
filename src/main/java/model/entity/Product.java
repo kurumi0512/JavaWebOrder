@@ -11,3 +11,5 @@ public class Product {
 	private String item;
 	private Integer price;
 }
+
+//product和order的資料不能擺在一起,因為product會一直改變 
