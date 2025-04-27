@@ -25,7 +25,7 @@ public class OrderDAO {
 		orders.remove(index);
 	}
 
-	// 修改一筆資訊
+	// 修改一筆資訊,newOrder=要修改的新order,set的功能是把 List 中指定索引的元素，替換成新的元素。
 	public void update(int index, Order newOrder) {
 		orders.set(index, newOrder);
 	}
